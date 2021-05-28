@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 # A user can see all the lists
@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 # POST "lists"
 # get '/lists/new', to: 'lists#new'
 # post '/lists', to: 'lists#create'
+Rails.application.routes.draw do
+  root to: 'articles#index'
+  resources :articles, except: :index
 
 
   resources :lists, only: [:index, :show, :create, :new] do
