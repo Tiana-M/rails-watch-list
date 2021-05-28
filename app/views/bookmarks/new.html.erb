@@ -1,0 +1,11 @@
+<h1>Here you will display a form where user can write comment</h1>
+
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie, label_method: :title, value_method: :id%>
+  <%= f.submit %>
+<% end %>
+
+
+<form action="/lists/:list_id/bookmarks" method="post"></form>
+<!-- <form action="/bookmarks" method="post"></form> -->
